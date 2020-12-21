@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Hananja's blog</title>
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="50" fill="White"/>
+      <path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95"/>
+      <path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95" transform="translate(100, 100), scale(-1,-1)"/>
+      <path d="M 35 45 L 67 45 L 65 55 L 33 55 Z"/>
+    </svg>'>
+    <style media="screen">
+      body {
+        background-image: url('file:///Users/hananja/Documents/School/2020-2021/Nederlands/Blog/firework.svg');
+        font-size: 1em;
+        background-repeat: round;
+        color: white;
+      }
+      body {
+        background-color: rgb(0,0,100);
+      }
+      .h {
+        position: fixed;
+        top: 0;
+        right: 0;
+        text-align: right;
+      }
+      .h img {
+        height: 2em;
+      }
+      .h .hm {
+        opacity: 0.0;
+        display: none;
+        transition: .5s opacity;
+      }
+      .h:hover .hm {
+        opacity: 1.0;
+        display: block;
+      }
+      .hm .b:hover .a {
+        display: block;
+      }
+      .a {
+        display: none;
+        position: fixed;
+        top:10%;right:10%;left:10%;bottom:10%;
+        background-color: rgba(255,255,255,0.8);
+        text-align: center;
+        padding: 20px;
+      }
+      .a h2 img {
+        height: 1em;
+      }
+      #dhm {
+        position: fixed;
+        top:0;right:0;left:0;bottom:0;
+        background-color: rgba(255,255,255,.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #dhm div {
+        text-align: center;
+        font-size: 1em;
+      }
+      #dhm div div {
+        z-index: -1;
+        position: absolute;
+        top:10%;right:10%;left:10%;bottom:10%;
+        background-color: black;
+      }
+      .blog p:first-of-type {
+        /* font-weight: bold; */
+      }
+      .blog h1 {
+        text-align: center;
+      }
+      .blog p {
+        text-align: justify;
+      }
+      .blog {
+        margin: 5% 20%;
+      }
+      td:first-of-type, th:first-of-type {
+        border-right: solid 10px rgba(0,0,0,0);
+        /* width: 49%; */
+      }
+      td, th {
+        width: 50%;
+      }
+      td {
+        vertical-align: top;
+      }
+      table {
+        border-spacing: 10px 0;
+        border-collapse: collapse;
+      }
+      .show {
+        position: absolute;
+        top:0;left:20%;right:20%;
+        z-index: -1;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="file:///Users/hananja/Documents/School/2020-2021/Nederlands/Blog/firework.svg" alt=""> -->
+    <!-- <svg viewBox="0 -30 100 130" class="show">
+      <style media="screen">
+        .firework {
+          offset-path: path("M 20 100 Q 30 20 50 20");
+          animation: shoot 1s ease-out;
+          animation-delay: 0s,1s;
+          fill: none;
+          offset-distance:100%;
+        }
+        @keyframes shoot {
+          from {offset-distance: 0%;fill:black}
+          to {offset-distance: 100%;fill:black}
+        }
+        .explosion {
+          animation: explode .3s ease-out, lower 3s ease-in;
+          fill: yellow;
+          opacity: 0.8;
+          animation-delay: 1s, 1.3s;
+        }
+        @keyframes explode {
+          from {r: 0; fill: black}
+          to {r: 50; fill: lightgreen}
+        }
+        @keyframes lower {
+          from {cy: 20; r:50; opacity: 0.8; fill: lightgreen}
+          to {cy: 100; r: 10; opacity: 0.0; fill: yellow}
+        }
+        .path {
+          animation: pathshow 1s ease-out forwards, pathhide 1s ease-out forwards;
+          stroke-dasharray: 100%;
+          animation-delay: 0s, 1s;
+        }
+        @keyframes pathshow {
+          from {stroke-dashoffset: 100%}
+          to {stroke-dashoffset: 25%}
+        }
+        @keyframes pathhide {
+          from {
+            stroke-dasharray: 100% 0%;
+            stroke-dashoffset: 25%;
+          }
+          to {
+            stroke-dasharray: 0% 100%;
+            stroke-dashoffset: -75%;
+          }
+        }
+      </style>
+      <path d="M 20 100 Q 30 20 50 20" stroke="orange" fill="none" class="path"/>
+      <path d="M -5 -2 L 3 -2 L 3 -3 L 6 0 L 3 3 L 3 2 L -5 2 Z" class="firework"/>
+      <circle class="explosion" cx="50" cy="20" r="0"/>
+    </svg> -->
+    <div id="dhm"></div>
+    <!-- <div id="img"> -->
+
+    <!-- </div> -->
+    <div class="h">
+      <img alt="" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="White"/><path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95"/><path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95" transform="translate(100, 100), scale(-1,-1)"/><path d="M 35 45 L 67 45 L 65 55 L 33 55 Z"/></svg>'>
+      <div class="hm">
+        <select id="dhs" onchange="dh()">
+          <option value="d">De</option>
+          <option value="h">Het</option>
+        </select> blog
+        <br>
+        <input type="checkbox" checked onchange="animation()">Achtergrondanimatie
+        <!-- <div class="b">
+          Over
+          <div class="a">
+            <h2>Over <img alt="" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="White"/><path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95"/><path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95" transform="translate(100, 100), scale(-1,-1)"/><path d="M 35 45 L 67 45 L 65 55 L 33 55 Z"/></svg>'> blogs</h2>
+            <p><dz-dc></dz-dc> blog verschijnt eenmalig, <d-h></d-h> blog is voor een schoolopdracht</p>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+
+    <div class="blog">
+      <h1>
+        2021: Hoe knallen we het in?
+      </h1>
+      <hr>
+      <p>Vuurwerk of geen vuurwerk in Nederland; het blijft een probleem. Vuurwerk afsteken voelt als een traditie die niet afgepakt mag worden. Maar weegt dat af tegen de risico's en de ongelukken die jaarlijks nog steeds te vaak gebeuren? Is het een belangrijke traditie of een niet-begrepen gevaar? De discussie is weer begonnen, daarom ook <dz-d></dz-d> blog.</p>
+      <h2>Vuurwerk naar Nederland</h2>
+      <p>U heeft misschien al gehoord dat buskruit vermoedelijk in China is ontstaan. Het gebruik voor vuurwerk is niet zo oud als de kanonnen waarin het gebruikt werd, maar toch wel redelijk oud. In 1731 werd er al een vuurwerkshow gedaan in Den Haag om de Utrechtse vrede. Het consumentenvuurwerk bleef wel lang uit, want pas in de jaren 70, ruim 250 jaar later, kwam dat ook om het hoekje kijken. Sindsdien steeg de vraag en het aanbod van vuurwerk snel. In heel Europa wordt met oud en nieuw vuurwerk afgestoken, maar in Nederland wordt nog steeds het meeste geld per persoon uitgegeven aan vuurwerk. We kunnen er niet omheen dat het een Nederlandse traditie is. De vraag is nu hoelang dat nog gaat duren.</p>
+      <br>
+      <hr>
+      Stelling: <q>Vuurwerk voor consumenten moet verboden worden</q>
+      <hr>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+      <table>
+        <thead>
+          <th>Tegen</th><th>Voor</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p>
+                Het is een Nederlandse gewoonte, al jarenlang. Dat kan niet zomaar verboden worden.
+                Met een goede vuurwerkbril en een aansteeklont kan er weinig mis gaan.
+                Als je je aan de huidige regels houd is er niks aan de hand.
+                De dingen van de grote ongelukken zijn al verboden.
+                Mensen kopen toch wel vuurwerk.
+                Vuurwerk is mooi om naar te kijken.
+              </p>
+            </td>
+            <td>
+              <p>
+                Niet alleen de mensen die gevaarlijk doen met vuurwerk, maar ook de mensen die zich wel aan de regels houden of zelfs helemaal geen vuurwerk afsteken hebben last van vuurwerk en krijgen vaak ongelukken.
+                Als we de hele verkoop verbieden wordt het al een stuk moeilijker om aan vuurwerk te komen, en zullen we weer heel wat ongelukken voorkomen.
+                Naast de ongelukken is het ook slecht voor het milieu, al die rook, en zeker het afval. Bij professionele vuurwerkshows is het vuurwerk minstens net zo mooi en wordt het afval netjes opgeruimd.
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Conclusie</h2>
+      <p>
+        Ikzelf hou wel van vuurwerk kijken en vind het leuk om zelf ook wat af te steken. Ik heb geprobeerd zo veel mogelijk mensen naar hun mening te vragen en de argumenten op te sommen.
+        Mijn advies is om nog van vuurwerk te genieten zolang het mag, en natuurlijk wel altijd op een veilige manier.
+      </p>
+      <!-- <h2>Tegen</h2>
+      <p>Het is een Nederlandse gewoonte, al jarenlang. Dat kan toch niet zomaar verboden worden? Met een goede vuurwerkbril en een aansteeklont kan er toch weinig mis gaan. Als je je aan de huidige regels houd is er nieks aan de hand.</p>
+      <h2>Voor</h2>
+      <p>Vuurwerk is een veelgebruikt middel voor vandalen. Als we de hele verkoop verbieden wordt het al een stuk moeilijker om aan vuurwerk te komen, en zullen we weer heel wat ongelukken voorkomen.</p> -->
+    </div>
+
+    <script type="text/javascript">
+      function dh(d) {
+        var d = d||document.getElementById('dhs').value
+        try{document.body.removeChild(document.getElementById('dhm'))}catch{}
+        if (d=='')
+          return
+        var a=d=='d'?true:false
+        for (var t of document.getElementsByTagName('d-h')) {
+          t.innerText = a?'de':'het'
+        }
+        for (var t of document.getElementsByTagName('dz-d')) {
+          t.innerText = a?'deze':'dit'
+        }
+        for (var t of document.getElementsByTagName('d-dt')) {
+          t.innerText = a?'die':'dat'
+        }
+        for (var t of document.getElementsByTagName('d-hc')) {
+          t.innerText = a?'De':'Het'
+        }
+        for (var t of document.getElementsByTagName('dz-dc')) {
+          t.innerText = a?'Deze':'Dit'
+        }
+        for (var t of document.getElementsByTagName('d-dth')) {
+          t.innerText = a?'Die':'Dat'
+        }
+        document.getElementById('dhs').getElementsByTagName('option')[a?0:1].selected = true
+        window.localStorage.setItem('dh', d)
+      }
+      function animation() {
+        if (window.event.target.checked === true) {
+          document.body.style.backgroundImage = 'url(\'file:///Users/hananja/Documents/School/2020-2021/Nederlands/Blog/firework.svg\')'
+        } else {
+          document.body.style.backgroundImage = 'none'
+        }
+      }
+      if (window.localStorage.getItem('dh')) {
+        dh(window.localStorage.getItem('dh'))
+      } else {
+        document.getElementById('dhm').innerHTML = '<div><div></div><h2>Wat heeft uw voorkeur?</h2><br><select id="dhs"><option value="" disabled selected></option><option value="d">De</option><option value="h">Het</option></select> blog<button onclick="dh()">Bevestig</button></div>'
+      }
+      // document.body.style.background = 'image(\'data:image/svg+xml' + document.getElementById('img').innerHTML + '\')'
+      // while (document.getElementsByTagName('data-firework')[0]) {
+        // document.getElementsByTagName('data-firework')[0].parentElement.replaceChild(document.getElementsByClassName('show')[0].cloneNode(true), document.getElementsByTagName('data-firework')[0])
+      // }
+      // setInterval(function () {
+      //   document.body.style.backgroundImage = 'url(\'data:image/svg,\')'
+      //   document.body.style.backgroundImage = 'url(\'file:///Users/hananja/Documents/School/2020-2021/Nederlands/Blog/firework.svg\')'
+      //   console.log('hello');
+      // }, 5000);
+    </script>
+  </body>
+</html>
