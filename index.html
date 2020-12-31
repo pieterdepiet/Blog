@@ -14,8 +14,12 @@
         background-image: url('/Blog/firework.svg');
         font-size: 1em;
         background-repeat: round;
-        color: white;
         background-color: rgb(0,0,100);
+        position: relative;
+        color: white;
+      }
+      :root {
+        --arr-top: 4em;--arr-right: 5em;
       }
       .b {
         position: fixed;
@@ -33,7 +37,7 @@
       .c:hover .d {
         opacity: 1.0;
       }
-      #a {
+      #a div {
         position: fixed;
         top:0;right:0;left:0;bottom:0;
         background-color: rgba(255,255,255,.5);
@@ -41,11 +45,11 @@
         align-items: center;
         justify-content: center;
       }
-      #a div {
+      #a div div {
         text-align: center;
         font-size: 1em;
       }
-      #a div div {
+      #a div div div {
         z-index: -1;
         position: absolute;
         top:10%;right:10%;left:10%;bottom:10%;
@@ -75,21 +79,69 @@
       .g {
         background-color: white;
         color: black;
+        border-radius: 1em;
+      }
+      #a svg {
+        position: absolute;
+        top: var(--arr-top); right: var(--arr-right);
+        width: 10%;
+        height: 10%;
+      }
+      #a {
+        --arr-top: 2em; --arr-right: 2em;
+      }
+      .i .tut1 {
+        --arr-top: 3.2em; --arr-right: 4.7em;
+      }
+      .i .tut2 {
+        --arr-top: 4.4em; --arr-right: 5em;
+      }
+      .i .tut3 {
+        --arr-top: 4.5em; --arr-right: 2em;
+      }
+      polygon {
+        animation: .5s arrow infinite alternate;
+      }
+      @keyframes arrow {
+        from {transform: translate(0,5px); fill: gray;}
+        to {transform: translate(5px,0); fill: white;}
+      }
+      .g {
+        position: absolute;
+        bottom: 0;right: 0;
+        padding: 0 1%;
+      }
+      .h {
+        overflow-y: hidden;
+        height: 2.2em;
+        transition: .5s height;
+      }
+      .h:hover {
+        height: 10em;
+      }
+      .h h2 {
+        margin: .1em;
+      }
+      .h ul {
+        margin-top: .5em;
       }
     </style>
   </head>
-  <body>
+  <body id="bod">
     <div id="a"></div>
-    <div class="b c">
+    <div class="b c" onmouseover="h()" onmouseout="i()">
       <img alt="" src='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="White"/><path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95"/><path d="M 10 95 A 5 5 0 1 0 5 100 Q 35 100 45 5 A 5 5 0 1 0 40 10 Q 25 100 10 95" transform="translate(100, 100), scale(-1,-1)"/><path d="M 35 45 L 67 45 L 65 55 L 33 55 Z"/></svg>'>
       <div class="d">
-        <select id="e" onchange="a()">
+        <select id="e" onchange="c()">
           <option value="d">De</option>
           <option value="h">Het</option>
         </select> blog
         <br>
-        <input type="checkbox" checked onchange="b()"> Achtergrondanimatie
+        <input type="checkbox" checked onchange="b()"><img src="/Blog/firework.svg" alt="animatie">
+        <br>
+        <button type="button" name="button" onclick="e(true)">Uitleg</button>
       </div>
+
     </div>
     <div class="f">
       <h1>
@@ -129,7 +181,7 @@
                 Er wordt ons al zo veel afgepakt.
                 <br>
                 Met een goede vuurwerkbril en een aansteeklont kan er weinig mis gaan.
-                Als je je aan de huidige regels houd is er niks aan de hand.
+                Als je je aan de huidige regels houdt is er niks aan de hand.
                 Het vuurwerk dat voor grote ongelukken zorgt is al verboden.
                 <br>
                 Mensen kopen toch wel vuurwerk.
@@ -161,33 +213,56 @@
         Ik zou zeggen: Geniet ervan zolang het nog kan, en je bent een rund als je met vuurwerk stunt.
       </p>
       <div class="g">
-        <h3>Bronnen</h3>
-        <ul>
-          <li>
-            <a href="https://isgeschiedenis.nl/nieuws/geschiedenis-van-vuurwerk-in-nederland">isgeschiedenis.nl</a>
-          </li>
-          <li>
-            <a href="https://www.tiny.cloud/blog/guide-svg-animation/">tiny.cloud</a>
-          </li>
-          <li>
-            <a href="https://css-tricks.com/transforms-on-svg-elements/">css-tricks.com</a>
-          </li>
-          <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray">developer.mozzila.org</a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/questions/19177571/restart-background-svg-animation">stackoverflow.com</a>
-          </li>
-          <li>
-            <a href="https://www.w3schools.com/css/css3_variables.asp">w3schools.com</a>
-          </li>
-        </ul>
+        <div class="h">
+          <h2>Bronnen</h2>
+          <ul>
+            <li>
+              <a href="https://isgeschiedenis.nl/nieuws/geschiedenis-van-vuurwerk-in-nederland">isgeschiedenis.nl</a>
+            </li>
+            <li>
+              <a href="https://www.tiny.cloud/blog/guide-svg-animation/">tiny.cloud</a>
+            </li>
+            <li>
+              <a href="https://css-tricks.com/transforms-on-svg-elements/">css-tricks.com</a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray">developer.mozzila.org</a>
+            </li>
+            <li>
+              <a href="https://stackoverflow.com/questions/19177571/restart-background-svg-animation">stackoverflow.com</a>
+            </li>
+            <li>
+              <a href="https://www.w3schools.com/css/css3_variables.asp">w3schools.com</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <script type="text/javascript">
-      function a(b) {
+      function a() {
+        document.getElementById('a').innerHTML = `
+        <div>
+          <div class="tut1">
+            <div></div>
+            <h2>U kunt de/het blog altijd wijzigen.</h2>
+            <button onclick="d()">></button>
+            <svg viewBox="0 0 15 15">
+              <polygon points="0,8 2,10 6,6 7,7 10,0 3,3 4,4"/>
+            </svg>
+          </div>
+        </div>
+        `
+      }
+      function b() {
+        if (window.event.target.checked === true) {
+          document.body.style.backgroundImage = 'url(\'/Blog/firework.svg\')'
+        } else {
+          document.body.style.backgroundImage = 'none'
+        }
+      }
+      function c(b) {
         var b = b||document.getElementById('e').value
-        try{document.body.removeChild(document.getElementById('a'))}catch{}
+        document.getElementById('a').innerHTML = ' '
         if (b=='')
           return
         var c=b=='d'?true:false
@@ -212,18 +287,55 @@
         document.getElementById('e').getElementsByTagName('option')[c?0:1].selected = true
         window.localStorage.setItem('a', b)
       }
-      function b() {
-        if (window.event.target.checked === true) {
-          document.body.style.backgroundImage = 'url(\'/Blog/firework.svg\')'
-        } else {
-          document.body.style.backgroundImage = 'none'
+      function d() {
+        document.getElementById('a').innerHTML = `
+        <div>
+          <div class="tut2">
+            <div></div>
+            <button onclick="a()"><</button>
+            <h2>Ook kunt u de achtergrondanimatie aan- en uitzetten.</h2>
+            <button onclick="f()">></button>
+            <svg viewBox="0 0 15 15">
+              <polygon points="0,8 2,10 6,6 7,7 10,0 3,3 4,4"/>
+            </svg>
+          </div>
+        </div>
+        `
+      }
+      function f() {
+        document.getElementById('a').innerHTML = `
+        <div>
+          <div class="tut3">
+            <div></div>
+            <button onclick="d()"><</button>
+            <h2>Tot slot kunt u de uitleg hier opnieuw bekijken.</h2>
+            <button onclick="g()">Begrepen</button>
+            <svg viewBox="0 0 15 15">
+              <polygon points="0,8 2,10 6,6 7,7 10,0 3,3 4,4"/>
+            </svg>
+          </div>
+        </div>
+        `
+      }
+      function g() {
+        document.getElementById('a').innerHTML = ' '
+      }
+      function e(b) {
+        if (b) {
+          return a()
         }
+        if (window.localStorage.getItem('a')) {
+          return c(window.localStorage.getItem('a'))
+        }
+        document.getElementById('a').innerHTML = '<div><div><div></div><h2>Wat heeft uw voorkeur?</h2><br><select id="e"><option value="" disabled selected></option><option value="d">De</option><option value="h">Het</option></select> blog<button onclick="c()">Opslaan</button></div></div>'
       }
-      if (window.localStorage.getItem('a')) {
-        a(window.localStorage.getItem('a'))
-      } else {
-        document.getElementById('a').innerHTML = '<div><div></div><h2>Wat heeft uw voorkeur?</h2><br><select id="e"><option value="" disabled selected></option><option value="d">De</option><option value="h">Het</option></select> blog<button onclick="a()">Bevestig</button></div>'
+      function h() {
+        document.getElementById('a').className = 'i'
       }
+      function i() {
+        document.getElementById('a').className = ''
+      }
+      e()
     </script>
   </body>
 </html>
