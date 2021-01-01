@@ -396,7 +396,8 @@
         document.getElementById('a').className = ''
       }
       e()
-      document.onload = function () {
+      window.onload = function () {
+        console.log('hello');
         document.click()
         document.getElementById('music').play()
       }
