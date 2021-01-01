@@ -396,9 +396,13 @@
         document.getElementById('a').className = ''
       }
       e()
+      document.onmousedown = function () {
+        document.getElementById('music').play()
+        document.onmousedown = null
+      }
     </script>
-    <iframe src="/Blog/250-milliseconds-of-silence.mp3" width="0" height="0" allow="autoplay"></iframe>
-    <audio autoplay>
+    <!-- <iframe src="/Blog/250-milliseconds-of-silence.mp3" width="0" height="0" allow="autoplay"></iframe> -->
+    <audio autoplay id="music">
       <source src="/Blog/music.wav" type="audio/wav">
     </audio>
   </body>
